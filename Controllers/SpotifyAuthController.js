@@ -3,7 +3,7 @@ import querystring from 'querystring'
 import axios from "axios";
 
 const getCredentials = (req, res) => {
-    console.info("ACCESS REQUESTED!")
+    console.log("ACCESS REQUESTED!")
 
     const state = generateRandomString(16)
     res.cookie(STATE, state)
@@ -51,7 +51,7 @@ const callback = (req, res) => {
 
     axios(authOptions).then(response => {
         console.log("CALLBACK RESPONSE: ")
-        console.log(response.data)
+        console.info(response.data)
         const { access_token, token_type, refresh_token, expires_in } = response.data
 
         const options = {
@@ -85,7 +85,6 @@ const refresh = (req, res) => {
     console.info("REFRESH REQUESTED!")
 
     const refresh_token = req.params.refreshToken;
-    console.log(refresh_token)
 
     const authOptions = {
         method: 'post',
