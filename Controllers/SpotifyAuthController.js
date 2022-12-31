@@ -120,9 +120,9 @@ const generateRandomString = (length) => {
     return text;
 }
 const SpotifyAuthController = (app) => {
-    app.get("/wp/api/login", getCredentials)
-    app.get("/wp/api/callback", callback)
-    app.get("/wp/api/refresh/:refreshToken", refresh)
+    app.get("/rp/api/login", getCredentials)
+    app.get("/rp/api/callback", callback)
+    app.get("/rp/api/refresh/:refreshToken", refresh)
 }
 
 
