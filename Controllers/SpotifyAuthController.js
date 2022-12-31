@@ -68,6 +68,8 @@ const callback = (req, res) => {
                 access_token, refresh_token, expires_in
             })
 
+            console.log("Redirecting to ORIGIN: " + process.env.ORIGIN + "/home/")
+
             res.redirect(`${process.env.ORIGIN}/home/?${params}`)
         }).catch(error => {
             console.log(error)
