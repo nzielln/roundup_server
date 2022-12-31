@@ -32,4 +32,4 @@ app.use(cors({
 SpotifyAuthController(app)
 
 app.use(express.static('Images'))
-app.listen(4000)
+app.listen(process.env.PORT || 4000)
